@@ -22,9 +22,6 @@ public:
   }
 };
 
-#define debug(args...) Debugger::print(args)
-#else
-#define debug(args...)
 #endif
 
 #endif
