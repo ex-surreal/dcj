@@ -1,14 +1,13 @@
 {
   "c-compiler": "gcc",
   "c-compiler-flags": [
-    "-O2",
-    "-lm"
+    "-O2"
   ],
   "cpp-compiler": "g++",
   "cpp-compiler-flags": [
     "-O2",
     "-std=gnu++0x",
-    "-lm"
+    "-DDEBUG"
   ],
   "java-compiler": "javac",
   "java-compiler-classpath-arg": "-classpath",
