@@ -4,18 +4,25 @@
 #include <iostream>
 
 #ifdef DEBUG
+
 class Debugger {
-  bool first;
 public:
-  Debugger() { first = true; }
-  ~Debugger() { std::cerr << std::endl; }
-  template <class type> Debugger& operator , (const type & val) {
-    if (!first) std::cerr << " ";
-    first = false;
-    return *this;
+
+  static void print() {}
+
+  template <typename T>
+  static void print(T t) {
+    std::cerr << t << std::endl;
+  }
+
+  template<typename T, typename... Args>
+  static void print(T t, Args... args) {
+    std::cerr << t << " ";
+    print(args...);
   }
 };
-#define debug(args...) (Debugger()), args
+
+#define debug(args...) Debugger::print(args)
 #else
 #define debug(args...)
 #endif
