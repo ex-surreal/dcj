@@ -1,4 +1,4 @@
 def Settings( **kwargs ):
     return {
-        'flags': [ '-x', 'c++', '-Wall', '-Wextra', '-Werror', '-I', './includes' ],
+        'flags': [ '-x', 'c++', '-Wall', '-Wextra', '-Werror', '-I', './includes', '-DDEBUG' ],
     }
