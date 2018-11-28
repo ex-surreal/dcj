@@ -1,24 +1,24 @@
 // Sample input 3, in CPP.
 
 #include <cassert>
+#include <cstdlib>
+
+using namespace std;
 
 long long GetStackSize() {
-  return 7LL;
+#ifdef STACK_SIZE
+  return STACK_SIZE;
+#endif
+  return 1;
 }
 
 long long GetNumDiners() {
-  return 5LL;
+#ifdef NUM_DINERS
+  return NUM_DINERS;
+#endif
+  return 1;
 }
 
 long long GetStackItem(long long i) {
-  switch ((int)i) {
-    case 0: return 0LL;
-    case 1: return 1LL;
-    case 2: return 3LL;
-    case 3: return 2LL;
-    case 4: return 1LL;
-    case 5: return 3LL;
-    case 6: return 0LL;
-    default: assert(0);
-  }
+  return (i^(1ll*rand()*rand())) % GetNumDiners();
 }
