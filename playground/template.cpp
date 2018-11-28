@@ -22,7 +22,6 @@ void process_linear_segment(
   // This node's segment: [l, r)
 }
 
-template <class type>
 void receive(
   const int from
 ) {
@@ -30,7 +29,6 @@ void receive(
   // GetLL(from)
 }
 
-template <class type>
 void send(
   const int to
 ) {
