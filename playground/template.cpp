@@ -10,6 +10,34 @@
 
 using namespace std;
 
+template <class type>
+void process_linear_segment(
+    const int id,
+    const int nodes,
+    const type N
+) {
+  type s = (N + nodes-1) / nodes;
+  type l = id*s;
+  type r = min(l+s, N);
+  // This node's segment: [l, r)
+}
+
+template <class type>
+void receive(
+  const int from
+) {
+  Receive(from);
+  // GetLL(from)
+}
+
+template <class type>
+void send(
+  const int to
+) {
+  // PutLL(to, val)
+  Send(to);
+}
+
 int main() {
   return 0;
 }
