@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./dcj.sh test --source $1 --executable=playground/bin/`basename $1`.o --nodes=$2
+./dcj.sh test --source=$1 --executable=playground/bin/`basename $1`.o --nodes=$2 --extra_flags="$3"
