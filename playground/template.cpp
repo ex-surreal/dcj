@@ -49,6 +49,7 @@ int main() {
   int id = MyNodeId();
   int nodes = NumberOfNodes();
   // long long N = GetN();
+  // process_linear_segment(id, nodes, N);
   if (!is_tail(id)) {
     receive(
       receive_from(id)
