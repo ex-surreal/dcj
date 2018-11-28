@@ -39,5 +39,8 @@ void send(
 }
 
 int main() {
+  int id = MyNodeId();
+  int nodes = NumberOfNodes();
+  // long long N = GetN();
   return 0;
 }
