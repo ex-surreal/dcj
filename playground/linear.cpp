@@ -8,6 +8,12 @@
 #include <iostream>
 #include <message.h>
 
+#ifdef INPUT
+#include INPUT
+#else
+// #include "input_file.h"
+#endif
+
 using namespace std;
 
 template <class type>

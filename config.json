@@ -1,13 +1,15 @@
 {
   "c-compiler": "gcc",
   "c-compiler-flags": [
-    "-O2"
+    "-O2",
+    "-I./playground/input"
   ],
   "cpp-compiler": "g++",
   "cpp-compiler-flags": [
     "-O2",
     "-std=gnu++0x",
-    "-DDEBUG"
+    "-DDEBUG",
+    "-I./playground/input"
   ],
   "java-compiler": "javac",
   "java-compiler-classpath-arg": "-classpath",

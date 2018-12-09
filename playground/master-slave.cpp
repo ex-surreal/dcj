@@ -8,7 +8,14 @@
 #include <iostream>
 #include <message.h>
 
-#define is_master(id) ((id) == 0)
+#define MASTER_NODE 0
+#define is_master(id) ((id) == MASTER_NODE)
+
+#ifdef INPUT
+#include INPUT
+#else
+// #include "input_file.h"
+#endif
 
 using namespace std;
 
@@ -20,13 +27,18 @@ void process_master(
     // Task distribution here
     //
 
+    // Send message to slaves
+    //
+    // NOTE: Slaves are waiting for messages, so we have to send message
+    //       to every slave. Even if the input is small and we don't need
+    //       all the slaves.
     // PutInt();
     Send(node);
   }
   for (int node = 0; node < nodes; node ++) {
     if (is_master(node)) continue;
-    // Receive result from slave
-    Receive(node);
+    // Receive result from any slave
+    Receive(-1);
     // GetInt();
 
     // Combine results here
@@ -50,12 +62,12 @@ void process_slave(
   Send(master);
 }
 
-// Only master talkes to slaves
+// Only master talks to slaves
 
 int main() {
   int id = MyNodeId();
   int nodes = NumberOfNodes();
   if (is_master(id)) process_master(nodes);
-  else process_slave(id);
+  else process_slave(MASTER_NODE);
   return 0;
 }
